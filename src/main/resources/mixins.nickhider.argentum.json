@@ -1,0 +1,11 @@
+{
+  "required": false,
+  "package": "${base_group}.compat",
+  "compatibilityLevel": "JAVA_${java_version}",
+  "injectors": {
+    "defaultRequire": 0
+  },
+  "client": [
+    "TextBatcherMixin"
+  ]
+}

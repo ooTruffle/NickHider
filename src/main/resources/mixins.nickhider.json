@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "${base_group}.mixins",
+  "compatibilityLevel": "JAVA_${java_version}",
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "client": [
+    "MinecraftMixin",
+    "FontRendererMixin",
+    "NetworkPlayerInfoMixin",
+    "NetHandlerPlayClientMixin"
+  ]
+}
