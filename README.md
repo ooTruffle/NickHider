@@ -3,6 +3,10 @@
 A client-side nick hider for Minecraft 1.8.9 (Ornithe + OneConfig). It shows a fake name in place of your own
 everywhere text is drawn — chat, tab list, nametags, scoreboard and menus. Other players still see your real name.
 
+# AI Disclosure
+This mod was done by Claude, feel free to pr to clean up the code ^^
+#
+
 ## Features
 
 - **Fake name** with optional `&` colour codes. Ranks and colours around your name are kept.
