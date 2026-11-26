@@ -71,15 +71,17 @@ public class NickHiderConfig extends Config {
     // ---------------- Skin ----------------
 
     @Switch(
-            title = "Hide Your Skin",
-            description = "Show a default skin on your own player, head and tab icon.",
+            title = "Replace Your Skin",
+            description = "Show another skin on your own player, head and tab icon.",
             category = "Skin"
     )
     public static boolean hideSkin = false;
 
     @Dropdown(
             title = "Replacement Skin",
-            options = {"Steve", "Alex", "Default for your UUID"},
+            description = "\"Your real skin\" shows your account's own skin even while a server gives you\n" +
+                    "another one, such as your Hypixel /nick skin.",
+            options = {"Steve", "Alex", "Your real skin"},
             category = "Skin"
     )
     public static int skinType = 0;

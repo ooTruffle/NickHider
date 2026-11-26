@@ -21,7 +21,10 @@ public abstract class NetworkPlayerInfoMixin {
     private void nickhider$skin(CallbackInfoReturnable<ResourceLocation> cir) {
         GameProfile profile = getGameProfile();
         if (SkinOverride.hideSkin(profile)) {
-            cir.setReturnValue(SkinOverride.skin(profile));
+            ResourceLocation skin = SkinOverride.skin(profile);
+            if (skin != null) {
+                cir.setReturnValue(skin);
+            }
         }
     }
 
@@ -29,7 +32,10 @@ public abstract class NetworkPlayerInfoMixin {
     private void nickhider$model(CallbackInfoReturnable<String> cir) {
         GameProfile profile = getGameProfile();
         if (SkinOverride.hideSkin(profile)) {
-            cir.setReturnValue(SkinOverride.model(profile));
+            String model = SkinOverride.model(profile);
+            if (model != null) {
+                cir.setReturnValue(model);
+            }
         }
     }
 
