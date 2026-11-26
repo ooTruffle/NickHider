@@ -17,9 +17,21 @@ This mod was done by Claude, feel free to pr to clean up the code ^^
   even while a server gives you another one (such as your Hypixel `/nick` skin).
 - **Streamer mode**: gives every other player an alias such as `Player3`, optionally with default skins.
 - **Toggle key** (Controls → Nick Hider).
+- **`/nickhider` command** for quick changes without opening the menu.
 - Works with Argentum's text renderer.
 
 Settings are in OneConfig under **Hypixel → Nick Hider**.
+
+## Commands
+
+| Command | What it does |
+| --- | --- |
+| `/nickhider` | Show the current settings and the commands |
+| `/nickhider toggle` / `on` / `off` | Turn the mod on or off |
+| `/nickhider name <name>` | Set the fake name (`&` colour codes work) |
+| `/nickhider hide <name>` / `unhide <name>` | Add or remove a name from Also Hide |
+| `/nickhider others` | Turn streamer mode on or off |
+| `/nickhider reset` | Forget the detected Hypixel nick |
 
 ## Requirements
 

@@ -68,7 +68,15 @@ public final class NameReplacer {
             do {
                 sb.append(text, last, m.start());
                 String rep = s.replacements.get(m.group().toLowerCase(Locale.ROOT));
-                sb.append(rep != null ? rep : m.group());
+                if (rep == null) {
+                    sb.append(m.group());
+                } else {
+                    sb.append(rep);
+                    // A coloured replacement would recolour the rest of the line; put back what it interrupted.
+                    if (rep.indexOf('§') >= 0) {
+                        sb.append("§r").append(activeFormat(text, m.start()));
+                    }
+                }
                 last = m.end();
             } while (m.find());
             sb.append(text, last, text.length());
@@ -79,6 +87,35 @@ public final class NameReplacer {
         }
         s.cache.put(text, out);
         return out;
+    }
+
+    /**
+     * The formatting codes in effect at {@code end}: the last colour (or reset) code, plus any style codes
+     * (bold, italic...) after it - the same rules the font renderer applies.
+     */
+    static String activeFormat(String text, int end) {
+        StringBuilder fmt = new StringBuilder();
+        for (int i = 0; i + 1 < end; i++) {
+            if (text.charAt(i) != '§') {
+                continue;
+            }
+            char c = Character.toLowerCase(text.charAt(i + 1));
+            if ((c >= '0' && c <= '9') || (c >= 'a' && c <= 'f') || c == 'r') {
+                fmt.setLength(0);
+                if (c != 'r') {
+                    fmt.append('§').append(c);
+                }
+            } else if (c >= 'k' && c <= 'o') {
+                fmt.append('§').append(c);
+            }
+            i++;
+        }
+        return fmt.toString();
+    }
+
+    /** Rebuild on the next tick, e.g. after a command changed the config. */
+    public static void refresh() {
+        ticks = REFRESH_TICKS;
     }
 
     public static void tick(Minecraft mc) {

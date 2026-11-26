@@ -34,7 +34,7 @@ public class NickHiderConfig extends Config {
 
     @Text(
             title = "Fake Name",
-            description = "Shown instead of your name. & colour codes work, but also colour the text after the name.",
+            description = "Shown instead of your name. & colour codes work. Also settable with /nickhider name.",
             placeholder = "You",
             category = "Name"
     )

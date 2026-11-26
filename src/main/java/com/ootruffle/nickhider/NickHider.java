@@ -16,6 +16,7 @@ public class NickHider implements ModInitializer {
     @Override
     public void init() {
         NickHiderConfig.register();
+        NickHiderCommand.register();
         KeybindEvents.REGISTER_KEYBINDS.register(() ->
                 toggleKey = KeybindRegistry.register("key.nickhider.toggle", 0, "key.categories.nickhider"));
     }
