@@ -13,7 +13,8 @@ This mod was done by Claude, feel free to pr to clean up the code ^^
 - **Auto-detects your Hypixel `/nick`** from the "You are now nicked as" message or your own tab list entry,
   and remembers it between sessions until your nick is reset.
 - **Also Hide** list for alts or other names.
-- **Skin and cape hiding**: Steve, Alex or your UUID's default skin.
+- **Skin replacement and cape hiding**: show Steve or Alex instead of your skin, or your real skin
+  even while a server gives you another one (such as your Hypixel `/nick` skin).
 - **Streamer mode**: gives every other player an alias such as `Player3`, optionally with default skins.
 - **Toggle key** (Controls → Nick Hider).
 - Works with Argentum's text renderer.
